@@ -41,6 +41,7 @@ const Card: FunctionComponent<CardProps> = ({ car }) => {
           className="card-img-top"
           src={car.image ?  car.image : car_placeholder}
           alt="car"
+          height="100%"
         />
         {car.estimatedate ? <div className="image_overlay" /> : null}
       </div>
@@ -80,13 +81,14 @@ function App() {
 
   const handleSelectCar = useCallback((car: CarProps) => {
     setSelected({ car })
-    setEstimatedate(moment(car.estimatedate, 'YYYY/DD/MM').toDate())
+    let date = car.estimatedate ? moment(car.estimatedate || '', 'YYYY/DD/MM').toDate() : new Date()
+    setEstimatedate(date)
     setPerson(car.person || '')
   }, [])
   const handleSubmit = useCallback(async() => {
     const body = {
       person,
-      estimatedate: moment(estimatedate).format('YYYY/DD/MM')
+      estimatedate: estimatedate ? moment(estimatedate).format('YYYY/DD/MM') : ''
     }
     try {
       const url = `${API_URL}/vehicles/${selected?.car._id}`

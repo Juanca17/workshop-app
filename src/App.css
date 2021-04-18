@@ -9,6 +9,7 @@ body {
 }
 .vehicle_image {
   position: relative;
+  height: 150px;
 }
 .vehicle_model {
   padding: .10rem 1.25rem;
