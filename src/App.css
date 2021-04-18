@@ -1,0 +1,67 @@
+body {
+  background-color: #282c34;
+}
+
+.vehicle_card {
+  width: 260px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.vehicle_image {
+  position: relative;
+}
+.vehicle_model {
+  padding: .10rem 1.25rem;
+}
+.vehicle_description {
+  font-size: 0.8rem;
+  height: 150px;
+  overflow-y: scroll;
+}
+.vehicle_kms {
+  font-size: 0.8rem;
+}
+
+.image_overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+  transition: .5s ease;
+  background-color: #282c34;
+}
+
+.vehicle_card:hover {
+  border: 1.5px solid #3498db !important;
+}
+
+.ribbon {
+  position: absolute;
+  top: 20px;
+  right: -5px;
+  padding: 15px;
+  z-index: 3;
+  max-width: 130px;
+  font-size: 0.8rem;
+  background: #3498db;
+  color: #fff;
+  border-right: 5px solid #8bc4ea;
+}
+
+.custom_datepicker {
+  border: 1px solid rgb(206, 212, 218);
+  border-radius: .25rem;
+  padding: .375rem .75rem !important;
+  display: block;
+  width: 100%;
+}
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+    display: block;
+    width: 100%;
+}
